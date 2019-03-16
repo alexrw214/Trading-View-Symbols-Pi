@@ -10,14 +10,8 @@ from emailalert import email_alert
 
 #TradingviewAlerts92@gmail.com TradingviewAlerts9294
 
-def clear(): 
-    # for windows 
-    if name == 'nt': 
-        _ = system('cls') 
-  
-    # for mac and linux(here, os.name is 'posix') 
-    else: 
-        _ = system('clear')   
+def clear():
+    print ("\033c")   
 
 def clear_and_print(u_starttime, u_startval, u_endtime, u_endval, l_starttime, l_startval, l_endtime, l_endval, opentime, closetime, weekend_close, holiday_close):
  	
@@ -38,9 +32,9 @@ def clear_and_print(u_starttime, u_startval, u_endtime, u_endval, l_starttime, l
 	else:
 		print("Market has no closing time.")
 	if weekend_close:
-		print("Market open on weekends.")
-	else:
 		print("Market closed on weekends.")
+	else:
+		print("Market open on weekends.")
 	if holiday_close:
 		print("Market closed on US Holidays.")
 	else:
@@ -116,4 +110,6 @@ while (currval < upper_curr_bound_val) or (currval > lower_curr_bound_val):
 	currval = get_values(symbol)
 	currtime = datetime.now().replace(second=0, microsecond=0)
 	currtime += timedelta(hours=4)
+	upper_curr_bound_val = upper_bound_line[currtime]
+	lower_curr_bound_val = lower_bound_line[currtime]
 

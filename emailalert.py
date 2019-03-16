@@ -10,7 +10,7 @@ def email_alert(symbol, currval, currtime, upper_val, lower_val):
 	port = 465  # For SSLc
 	msg = MIMEMultipart()
 	fromaddr = "tradingviewalert92@gmail.com"
-	address_list = ["alex.winemiller@petalcard.com", "alexa94@vt.edu"]
+	address_list = ["connor.winemiller@gmail.com", "alexa94@vt.edu"]
 	password = 'TradingviewAlerts9294'
 
 
